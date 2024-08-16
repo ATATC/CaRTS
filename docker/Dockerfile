@@ -6,5 +6,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim ffmpeg libsm6 libxext6
 RUN pip install opencv-python scipy matplotlib einops imageio scikit-image positional_encodings
 RUN pip install "git+https://github.com/facebookresearch/pytorch3d.git" 
 
-RUN git clone https://github.com/hding2455/CaRTS /workspace/code
+RUN git clone https://github.com/ATATC/CaRTS /workspace/code
 WORKDIR /workspace/code
