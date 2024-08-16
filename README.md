@@ -52,7 +52,7 @@ We only used one GPU for training and inference so we haven't implement multi-gp
 ### The final test will be on test set(for example):
 
 ```shell
-python validate.py --config UNet_SegSTRONGC_AutoAugment --model_path /checkpoints/unet_autoaugment.pth --domain smoke
+python validate.py --config UNet_SegSTRONGC_AutoAugment --model_path /checkpoints/unet_autoaugment.pth --domain bg_change
 ```
 
 ## Dataset preparation:
