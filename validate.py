@@ -70,10 +70,14 @@ def evaluate(model, dataloader, device, tau, save_dir=None):
             (np.mean([dice_tools])))
     print("std: dice_tool: %f " %
             (np.std([dice_tools])))
+    print("min: dice_tool: %f " %
+          (np.min([dice_tools])))
     print("mean: nsd: %f" %
             (np.mean([nsds])))
     print("std: nsd: %f" %
             (np.std([nsds])))
+    print("min: nsd: %f" %
+          (np.min([nsds])))
     
     if save_dir is not None:
         np.save(os.path.join(save_dir, "pred.npy"), results)
