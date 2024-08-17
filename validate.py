@@ -26,6 +26,7 @@ def parse_args():
     return args
 
 def evaluate(model, dataloader, device, tau, save_dir=None):
+    print("Custom Version 1")
     start = time.time()
     results = []
     gts = []
@@ -59,6 +60,7 @@ def evaluate(model, dataloader, device, tau, save_dir=None):
         dice_tool = dice_scores(result, mask)
         nsd = normalized_surface_distances(result, mask, tau)
         if nsd < .61:
+            print("Saving...")
             save_image(image, f"/workspace/data/example{i}.png")
         dice_tools.append(dice_tool)
         nsds.append(nsd)
