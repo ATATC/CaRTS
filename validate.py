@@ -62,6 +62,7 @@ def evaluate(model, dataloader, device, tau, save_dir=None):
         if nsd < .61:
             print("Saving...")
             save_image(image, f"/workspace/data/example{i}.png")
+            save_image(image, f"/workspace/data/gt{i}.png")
         dice_tools.append(dice_tool)
         nsds.append(nsd)
         if save_dir is not None:
