@@ -1,4 +1,4 @@
-From pytorch/pytorch:2.1.0-cuda12.1-cudnn8-devel 
+FROM pytorch/pytorch:2.1.0-cuda12.1-cudnn8-devel
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libxrender-dev
