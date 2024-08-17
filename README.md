@@ -24,10 +24,11 @@ This challenge is originated from:
 
 ### We provided docker for easy installation, the environment can be easily set up via:
 
-    cd docker
-    docker build ./ -t segstrongc:latest
-    docker run --rm -v "LOCAL_DATADIR":/workspace/data --gpus='"device={GPU_IDS}"' -it segstrongc:latest
-
+```shell
+cd docker
+docker build ./ -t segstrongc:latest
+docker run --rm -v "F:\SharedDatasets\SegSTRONGC_release:/workspace/data" -v "F:\Projects\PythonProjects\CaRTS\checkpoints:/checkpoints" --gpus="device=0" -it segstrongc:latest
+```
 
 ## Usage
 
