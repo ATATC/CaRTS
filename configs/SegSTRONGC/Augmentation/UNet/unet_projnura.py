@@ -20,9 +20,9 @@ class UNetProjNura(object):
             set_indices=[3, 4, 5, 7, 8],
             subset_indices=[[0, 2], [0, 1, 2], [0, 2], [0, 1], [1, 2]],
             domains=['regular'],
-            image_transforms=[transform, wrap(AutoAugment()), wrap(Smoke(p=0.5)), wrap(LowBrightness(p=0.5)),
+            image_transforms=[transform, lambda x : x.to(torch.uint8), wrap(AutoAugment()), wrap(Smoke(p=0.5)), wrap(LowBrightness(p=0.5)),
                               wrap(RandomRotate((-90, 90))), lambda x: x.to(torch.float)],
-            gt_transforms=[True, False, False, False, True, False]
+            gt_transforms=[True, False, False, False, False, True, False]
         )
     )
     validation_dataset = dict(
@@ -68,5 +68,5 @@ class UNetProjNura(object):
                         weight_decay=10e-5)),
                 max_epoch_number=40,
                 save_interval=5,
-                save_path='/workspace/code/checkpoints/unet_segstrongc_autoaugment/',
+                save_path='/checkpoints/unet_projnura.pth',
                 log_interval=50)))

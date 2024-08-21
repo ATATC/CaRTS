@@ -41,7 +41,7 @@ We only used one GPU for training and inference so we haven't implement multi-gp
 ### for example:
 
 ```shell
-python train.py --config UNet_ProjNura
+python train.py --config UNet_ProjNura --model_path /checkpoints/unet_autoaugment.pth
 ```
 
 ### To run inference on validation set, give the name of the config and the path to the checkpoint file for networks to load:
@@ -49,10 +49,6 @@ python train.py --config UNet_ProjNura
     python validate.py --config CONFIG_FILENAME --model_path CHECKPOINT_PATH --domain DOMAIN_NAME
 
 ### for example:
-
-    python validate.py --config UNet_SegSTRONGC --model_path checkpoints/unet_segstrongc/model_39.pth --domain regular
-
-### The final test will be on test set(for example):
 
 ```shell
 python validate.py --config UNet_SegSTRONGC_AutoAugment --model_path /checkpoints/unet_autoaugment.pth --domain bg_change
