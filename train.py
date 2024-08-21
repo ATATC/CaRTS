@@ -1,19 +1,18 @@
+import argparse
+
+import torch
 from torch.utils.data import DataLoader
-import numpy as np
+
+from CaRTS import build_model
 from configs import config_dict
 from datasets import dataset_dict
-import torch
-import time
-import argparse
-import os
-from CaRTS import build_model
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=str, help="Name of the configuration file.")
     parser.add_argument("--model_path", type=str, default=None, help="Path to the model checkpoint file")
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 if __name__ == "__main__":
     args = parse_args()
