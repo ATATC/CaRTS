@@ -3,7 +3,7 @@ from os.path import abspath as _abspath
 from random import randint as _randint
 
 from albumentations import Compose as _Compose, SafeRotate as _SafeRotate, RandomCrop as _RandomCrop, \
-    Resize as _Resize, RandomBrightnessContrast as _RandomBrightnessContrast
+    Resize as _Resize, RandomBrightnessContrast as _RandomBrightnessContrast, Rotate as _Rotate
 from cv2 import imread as _imread
 from typing_extensions import override as _override, Literal as _Literal
 
@@ -42,6 +42,15 @@ class Compose(TransformBase):
 class Null(TransformBase):
     def apply(self, img: _npndarray) -> _npndarray:
         return img
+
+
+class RandomRotate(TransformBase):
+    def __init__(self, limit: tuple[float, float], p: float = 1) -> None:
+        super().__init__(p)
+        self._transform: _Rotate = _Rotate(limit)
+
+    def apply(self, img: _npndarray) -> _npndarray:
+        return self._transform(img)
 
 
 class Smoke(TransformBase):
