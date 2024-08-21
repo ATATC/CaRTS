@@ -36,5 +36,5 @@ config_dict = {
         "SETR_MLA_SegSTRONGC_Elastic": SETR_MLA_SegSTRONGC_Elastic,
         "DeepLabV3p_SegSTRONGC": DeepLabV3p_SegSTRONGC,
         "TTA_Unet_CTS": TTA_Unet_CTS,
-        "UNet_AutoAugment_PROJNURA": UNetProjNura
+        "UNet_ProjNura": UNetProjNura
         }
