@@ -50,7 +50,7 @@ class RandomRotate(TransformBase):
         self._transform: _Rotate = _Rotate(limit)
 
     def apply(self, img: _npndarray) -> _npndarray:
-        return self._transform(img)
+        return self._transform(image=img)["image"]
 
 
 class Smoke(TransformBase):
