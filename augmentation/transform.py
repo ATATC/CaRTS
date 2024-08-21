@@ -45,7 +45,7 @@ class Null(TransformBase):
 
 
 class RandomRotate(TransformBase):
-    def __init__(self, limit: tuple[float, float], p: float = 1) -> None:
+    def __init__(self, limit: tuple[float, float] = (-90, 90), p: float = 1) -> None:
         super().__init__(p)
         self._transform: _Rotate = _Rotate(limit)
 
