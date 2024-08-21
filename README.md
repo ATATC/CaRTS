@@ -41,7 +41,7 @@ We only used one GPU for training and inference so we haven't implement multi-gp
 ### for example:
 
 ```shell
-python train.py --config UNet_SegSTRONGC
+python train.py --config UNet_ProjNura
 ```
 
 ### To run inference on validation set, give the name of the config and the path to the checkpoint file for networks to load:
