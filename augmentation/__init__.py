@@ -33,6 +33,6 @@ def load_targets_tensor(targets: _Sequence[str]) -> tuple[list[_Tensor], list[_T
 
 def wrap(trans: TransformBase) -> _Callable[[_Tensor], _Tensor]:
     def _(img: _Tensor) -> _Tensor:
-        return _tensor(trans(_nparray(img)))
+        return _tensor(trans(_nparray(img).transpose(1, 2, 0)).transpose(2, 0, 1))
 
     return _
