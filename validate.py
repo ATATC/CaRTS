@@ -20,6 +20,7 @@ def parse_args():
     parser.add_argument("--model_path", type=str, help="Path to the model checkpoint file")
     parser.add_argument("--test", type=bool, default=False, help="True for testing, False for validation")
     parser.add_argument("--domain", type=str, default=None, choices=['regular', 'smoke', 'bg_change', 'blood', 'low_brightness'], help="Test/Validate domain")
+    parser.add_argument("--save", type=bool, default=False, help="Save worst results")
     parser.add_argument("--save_dir", type=str, default=None, help="Path to save model output")
     parser.add_argument("--tau", type=int, default=5, help="Tolerance in normalized surface distance calculation")
     args = parser.parse_args()

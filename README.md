@@ -54,6 +54,10 @@ python train.py --config UNet_ProjNura --model_path /checkpoints/unet_autoaugmen
 python validate.py --config UNet_SegSTRONGC_AutoAugment --model_path /checkpoints/unet_autoaugment.pth --domain bg_change
 ```
 
+```shell
+python validate.py --config UNet_ProjNura --model_path /checkpoints/unet_projnura.pth --domain bg_change
+```
+
 ## Dataset preparation:
 
 Please refer to our ([website](segstrongc.cs.jhu.edu)) for registration and data downloading
