@@ -1,9 +1,11 @@
-from torch.optim import SGD
-from torch.nn import BCELoss
-from torch.optim.lr_scheduler import StepLR
 import torch
 import torchvision.transforms as T
-from augmentation import wrap, AutoAugment, Smoke, LowBrightness, RandomRotate
+from torch.nn import BCELoss
+from torch.optim import SGD
+from torch.optim.lr_scheduler import StepLR
+
+from augmentation import wrap, Smoke, RandomRotate
+from datasets.transformation.autoaugment import AutoAugment
 
 transform = T.Compose([
     T.ToTensor(),
@@ -20,7 +22,7 @@ class UNetProjNura(object):
             set_indices=[3, 4, 5, 7, 8],
             subset_indices=[[0, 2], [0, 1, 2], [0, 2], [0, 1], [1, 2]],
             domains=['regular'],
-            image_transforms=[transform, lambda x : x.to(torch.uint8), wrap(AutoAugment()), wrap(Smoke(p=0.5)),
+            image_transforms=[transform, lambda x : x.to(torch.uint8), AutoAugment, wrap(Smoke(p=0.5)),
                               wrap(RandomRotate((-90, 90))), lambda x: x.to(torch.float)],
             gt_transforms=[True, False, False, False, True, False]
         )
