@@ -20,9 +20,9 @@ class UNetProjNura(object):
             set_indices=[3, 4, 5, 7, 8],
             subset_indices=[[0, 2], [0, 1, 2], [0, 2], [0, 1], [1, 2]],
             domains=['regular'],
-            image_transforms=[transform, lambda x : x.to(torch.uint8), wrap(AutoAugment()), wrap(Smoke(p=0.5)), wrap(LowBrightness(p=0.5)),
+            image_transforms=[transform, lambda x : x.to(torch.uint8), wrap(AutoAugment()), wrap(Smoke(p=0.5)),
                               wrap(RandomRotate((-90, 90))), lambda x: x.to(torch.float)],
-            gt_transforms=[True, False, False, False, False, True, False]
+            gt_transforms=[True, False, False, False, True, False]
         )
     )
     validation_dataset = dict(
