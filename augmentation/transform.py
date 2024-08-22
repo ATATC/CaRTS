@@ -92,7 +92,7 @@ class Smoke(TransformBase):
 
 
 class LowBrightness(TransformBase):
-    def __init__(self, brightness_range: tuple[float, float] = (-.9, -.1),
+    def __init__(self, brightness_range: tuple[float, float] = (-.5, -.1),
                  contrast_range: tuple[float, float] = (-0.2, 0.2), p: float = 1) -> None:
         super().__init__(p)
         self._transform: _RandomBrightnessContrast = _RandomBrightnessContrast(brightness_range, contrast_range, p=1)
