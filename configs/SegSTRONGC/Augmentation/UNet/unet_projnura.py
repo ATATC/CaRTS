@@ -68,5 +68,5 @@ class UNetProjNura(object):
                         weight_decay=10e-5)),
                 max_epoch_number=40,
                 save_interval=5,
-                save_path='/checkpoints/unet_projnura.pth',
+                save_path='/checkpoints/unet_projnura/',
                 log_interval=50)))
