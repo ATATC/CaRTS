@@ -64,7 +64,7 @@ class UNetProjNura(object):
                 optimizer=dict(
                     optim_class=SGD,
                     args=dict(
-                        lr=0.01,
+                        lr=3e-4,
                         momentum=0.9,
                         weight_decay=10e-5)),
                 max_epoch_number=40,
