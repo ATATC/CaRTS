@@ -27,7 +27,7 @@ This challenge is originated from:
 ```shell
 cd docker
 docker build ./ -t segstrongc:latest
-docker run --rm -v "F:\SharedDatasets\SegSTRONGC_release:/workspace/data" -v "F:\Projects\PythonProjects\CaRTS\checkpoints:/checkpoints" --gpus="device=0" -it segstrongc:latest
+docker run --rm -v "C:/SharedDatasets/SegSTRONGC_release:/workspace/data" -v "F:/Projects/PythonProjects/CaRTS/checkpoints:/checkpoints" --gpus="device=0" -it segstrongc:latest
 ```
 
 ## Usage
