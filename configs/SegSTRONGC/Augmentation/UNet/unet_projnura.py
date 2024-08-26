@@ -4,7 +4,7 @@ from torch.nn import BCELoss
 from torch.optim import SGD
 from torch.optim.lr_scheduler import StepLR
 
-from augmentation import wrap, LowBrightness
+from augmentation import wrap, Blood
 
 transform = T.Compose([
     T.ToTensor(),
@@ -21,7 +21,7 @@ class UNetProjNura(object):
             set_indices=[3, 4, 5, 7, 8],
             subset_indices=[[0, 2], [0, 1, 2], [0, 2], [0, 1], [1, 2]],
             domains=['regular'],
-            image_transforms=[transform, wrap(LowBrightness(p=0.5)), lambda x : x.to(torch.uint8), lambda x: x.to(torch.float)],
+            image_transforms=[transform, wrap(Blood(10, p=0.5)), lambda x : x.to(torch.uint8), lambda x: x.to(torch.float)],
             gt_transforms=[True, False, False, False, False]
         )
     )
