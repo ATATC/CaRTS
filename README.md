@@ -55,7 +55,7 @@ python validate.py --config UNet_SegSTRONGC_AutoAugment --model_path /checkpoint
 ```
 
 ```shell
-python validate.py --config UNet_ProjNura --model_path /checkpoints/unet_projnura.pth --domain bg_change
+python validate.py --config UNet_ProjNura --model_path /checkpoints/unet_projnura/model_39.pth --domain bg_change
 ```
 
 ## Dataset preparation:
