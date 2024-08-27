@@ -116,8 +116,8 @@ class Blood(TransformBase):
 
     def infect_root(self, mask: _npndarray) -> _npndarray:
         height, width = mask.shape
-        root_x = _randint(int(self._root_range[0] * width), int(self._root_range[2] * width))
-        root_y = _randint(int(self._root_range[1] * height), int(self._root_range[3] * height))
+        root_x = _randint(int(self._root_range[0] * width), int(self._root_range[2] * width) - 1)
+        root_y = _randint(int(self._root_range[1] * height), int(self._root_range[3] * height) - 1)
         mask[root_y, root_x] = True
         return mask
 
