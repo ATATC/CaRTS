@@ -30,7 +30,7 @@ class UNetProjNura(object):
         name="SegSTRONGC",
         args=dict(
             root_folder='/workspace/data/SegSTRONGC_release',
-            split='smoke',
+            split='lb',
             set_indices=[1],
             subset_indices=[[0, 1, 2]],
             domains=['regular'],
