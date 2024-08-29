@@ -27,7 +27,7 @@ This challenge is originated from:
 ```shell
 cd docker
 docker build ./ -t segstrongc:latest
-docker run --rm -v "C:/SharedDatasets/SegSTRONGC_release:/workspace/data" -v "F:/Projects/PythonProjects/CaRTS/checkpoints:/checkpoints" --gpus="device=0" -it segstrongc:latest
+docker run --rm -v "S:/SharedDatasets/SegSTRONGC_release:/workspace/data" --gpus="device=0" -it segstrongc:latest
 ```
 
 ## Usage
@@ -51,11 +51,7 @@ python train.py --config UNet_ProjNura --model_path /checkpoints/unet_autoaugmen
 ### for example:
 
 ```shell
-python validate.py --config UNet_SegSTRONGC_AutoAugment --model_path /checkpoints/unet_autoaugment.pth --domain bg_change
-```
-
-```shell
-python validate.py --config UNet_ProjNura --model_path /checkpoints/unet_projnura/model_39.pth --domain bg_change
+python validate.py --config UNet_SegSTRONGC --model_path checkpoints/unet_projnura.pth --test True --domain smoke --save_dir /workspace/data/SegSTRONG-C/results/smoke
 ```
 
 ## Dataset preparation:
