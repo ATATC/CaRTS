@@ -75,8 +75,8 @@ def rank(teams, metrics = ['dice', 'nsd']):
 
 def plot_segmentation(predicted, gt, image, i):
     TP = (predicted == 1) & (gt == 1)
-    FP = (predicted == 1) & (gt == 0)
     TN = (predicted == 0) & (gt == 0)
+    FP = (predicted == 1) & (gt == 0)
     FN = (predicted == 0) & (gt == 1)
     result = np.zeros_like(predicted, dtype=np.uint8)
     result[TP] = 0
