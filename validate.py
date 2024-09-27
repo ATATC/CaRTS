@@ -60,10 +60,6 @@ def evaluate(model, dataloader, device, tau, save_dir=None):
 
         dice_tool = dice_scores(result, mask)
         nsd = normalized_surface_distances(result, mask, tau)
-        if args.save and nsd < .61:
-            print("Saving...")
-            save_image(image, f"/workspace/data/example{i}.png")
-            save_image(image, f"/workspace/data/gt{i}.png")
         dice_tools.append(dice_tool)
         nsds.append(nsd)
         if save_dir is not None:

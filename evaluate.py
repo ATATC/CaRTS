@@ -87,11 +87,10 @@ def plot_segmentation(predicted, gt, image, i):
     fig, axs = plt.subplots(1, 1, figsize=(10,10))
     colors = [(1, 1, 1), (0, 0, 0), (1, 0.647, 0), (1, 0, 0)]
     cmap = plt.matplotlib.colors.ListedColormap(colors)
-    # axs.imshow(result, cmap=cmap, interpolation='nearest')
+    axs.imshow(result, cmap=cmap, interpolation='nearest')
     axs.imshow(image.squeeze().permute(1,2,0)/255, interpolation="nearest")
-
     axs.axis("off")
-    fig.savefig(f"baseline_img/1.png", bbox_inches="tight", pad_inches=0, dpi=300)
+    fig.savefig(f"baseline_img/{i}.png", bbox_inches="tight", pad_inches=0, dpi=300)
 
 def plot_augmentation(img, i):
     fig, axs = plt.subplots(1, 4, figsize=(20, 5))
