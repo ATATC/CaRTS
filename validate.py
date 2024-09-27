@@ -54,8 +54,8 @@ def evaluate(model, dataloader, device, tau, save_dir=None):
         
         mask = (data['gt'].cpu().numpy() > 0.5).squeeze()
 
-        # plot_segmentation(result, mask, image, i)
-        # plot_augmentation(image.squeeze().to(torch.uint8), i)
+        plot_segmentation(result, mask, image, i)
+        plot_augmentation(image.squeeze().to(torch.uint8), i)
         
 
         dice_tool = dice_scores(result, mask)
